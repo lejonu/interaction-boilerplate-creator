@@ -1,0 +1,18 @@
+<?php
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Provide a public area view for the plugin
+ *
+ * This file is used to markup the public-facing aspects of the plugin.
+ *
+ * @since    1.0.0
+	* @package  &&&plugin_package_name&&&\interaction\public
+ */
+?> 
+
+<!-- This file should consist primarily of HTML with a little bit of PHP. -->
+

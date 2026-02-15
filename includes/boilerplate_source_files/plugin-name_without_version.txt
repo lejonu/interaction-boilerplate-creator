@@ -1,0 +1,52 @@
+<?php
+/**
+ * @link              &&&plugin_link&&&
+ * @since             1.0.0
+ * @author            &&&plugin_author_name&&& <&&&plugin_author_email&&&>
+ * @copyright         &&&plugin_current_year&&& &&&plugin_author_name&&&
+ * @license           GPL-2.0-or-later
+ *
+ * @wordpress-plugin
+ * Plugin Name:       &&&project_name&&&
+ * Plugin URI:        &&&plugin_link&&&
+ * Description:       &&&plugin_description&&&
+ * Version:           1.0.0
+ * Requires at least: 6.5
+ * Requires PHP:      8.0
+ * Author:            &&&plugin_author_name&&&
+ * Author URI:        &&&plugin_link&&&
+ * Text Domain:       &&&plugin_file_name&&&
+ * Domain Path:       /languages
+ * License:           GPL v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Defines the path to the plugin directory.
+	*
+	* @since 1.0.0
+	*/
+if ( ! defined( '&&&plugin_constant_name&&&_DIR' ) ) {
+	define( '&&&plugin_constant_name&&&_DIR', plugin_dir_path( __FILE__ ) );
+}
+
+// Requires the plugin's main class.
+require &&&plugin_constant_name&&&_DIR . 'class-&&&plugin_file_name&&&-main.php';
+
+if ( ! function_exists( '&&&plugin_function_name&&&_instantiate' ) ) {
+	/**
+	 * Instantiates the plugin's main class.
+	 *
+	 * @since 1.0.0
+	 */
+	function &&&plugin_function_name&&&_instantiate() {
+		$plugin = new &&&plugin_class_name&&&_Main();
+	}
+}
+
+&&&plugin_function_name&&&_instantiate();

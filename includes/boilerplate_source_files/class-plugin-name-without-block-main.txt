@@ -1,0 +1,95 @@
+<?php
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( '&&&plugin_class_name&&&_Main' ) ) {
+	/**
+	 * This is the plugin's main class that will load all other classes.
+	 *
+	 * @since   1.0.0
+  * @author  &&&plugin_author_name&&& <&&&plugin_author_email&&&>
+	 * @package &&&plugin_package_name&&&
+	 */
+	class &&&plugin_class_name&&&_Main {
+		
+		/**
+			* Current plugin version.
+			*
+			* @since  1.0.0
+			* @access private
+			* @var    string $version
+			*/
+		private $version;
+
+	/**
+	 * Checks and sets the plugin version, loads dependencies and runs the plugin.
+	 *
+	 * @since   1.0.0
+	 * @package &&&plugin_package_name&&&
+	 */
+		public function __construct() {
+			$this->set_version();
+			$this->load_dependencies();
+			$this->run();
+		}
+ 
+		/**
+		 * Checks Semantic Versioning 2.0.0 and sets the plugin version.
+			* @see https://semver.org/#faq
+		 *
+		 * @since  1.0.0
+			* @var    &&&plugin_constant_name&&&_VERSION
+		 */
+		private function set_version(): void {
+			$numbered_capture_groups = '/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/';
+
+			if ( preg_match( $numbered_capture_groups, &&&plugin_constant_name&&&_VERSION ) ) {
+				$this->version = &&&plugin_constant_name&&&_VERSION;
+			} else {
+				$this->version = '1.0.0';
+			}
+		}
+
+		/**
+		 * Gets the plugin version to use in the classes that need it.
+		 *
+		 * @since  1.0.0
+			* @return string $this->version
+		 */
+		public function get_version(): string {
+			return $this->version; 
+		}
+
+		/**
+		 * Loads activation and interaction dependencies.
+		 *
+		 * @since  1.0.0
+		 */
+		private function load_dependencies(): void {
+			if ( is_admin() ) {
+				require &&&plugin_constant_name&&&_DIR . 'activation/class-&&&plugin_file_name&&&-activate.php';
+				require &&&plugin_constant_name&&&_DIR . 'activation/class-&&&plugin_file_name&&&-deactivate.php';
+				require &&&plugin_constant_name&&&_DIR . 'interaction/admin/class-&&&plugin_file_name&&&-admin.php';
+			}
+
+			require &&&plugin_constant_name&&&_DIR . 'interaction/public/class-&&&plugin_file_name&&&-public.php';
+		}
+
+		/**
+		 * Runs the plugin.
+		 *
+		 * @since  1.0.0
+		 */
+		private function run(): void {
+			if ( is_admin() ) {
+				new &&&plugin_class_name&&&_Activate();
+				new &&&plugin_class_name&&&_Deactivate();
+				new &&&plugin_class_name&&&_Admin( $this->get_version() );
+			}
+
+			new &&&plugin_class_name&&&_Public( $this->get_version() );
+		}
+	}
+}
