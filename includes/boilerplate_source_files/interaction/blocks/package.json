@@ -14,8 +14,6 @@
 		"start": "wp-scripts start --experimental-modules"
 	},
 	"devDependencies": {
-		"@wordpress/blocks": "latest",
-		"@wordpress/block-editor": "latest",
 		"@wordpress/scripts": "latest"
 	},
 	"files": [
