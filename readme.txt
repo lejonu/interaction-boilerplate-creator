@@ -4,7 +4,7 @@ Donate link: https://lejonu.github.io/portfolio/#donate
 Tags: boilerplate, model, standard
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -31,5 +31,10 @@ All development for this plugin is handled via [GitHub](https://github.com/lejon
 = no upgrade yet =
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Fix - Remove devDependencies @wordpress/blocks and @wordpress/block-editor from interaction/blocks/package.json.
+
 = [1.0.0]2026-01-23 =
 

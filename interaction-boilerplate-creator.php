@@ -10,7 +10,7 @@
  * Plugin Name:       Interaction Boilerplate Creator
  * Plugin URI:        https://github.com/lejonu/interaction-boilerplate-creator
  * Description:       Create interactive WordPress boilerplates.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Author:            Leonardo José Nunes
