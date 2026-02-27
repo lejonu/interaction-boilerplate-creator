@@ -1,0 +1,14 @@
+# General Directories
+node_modules
+vendor
+.vscode
+
+# Root Directories
+/bin
+/.vscode
+/.phpdoc
+
+# Files
+/package*
+
+.phpunit.result.cache

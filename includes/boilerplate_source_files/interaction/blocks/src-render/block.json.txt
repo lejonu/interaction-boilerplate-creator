@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "&&&plugin_file_name&&&/&&&plugin_block_name&&&",
+	"version": "1.0.0",
+	"title": "&&&plugin_block_title&&&",
+	"category": "widgets",
+	"icon": "&&&plugin_block_icon&&&",
+	"attributes": {}, 
+	"description": "&&&plugin_block_description&&&",
+	"supports": {
+		"interactivity": true
+	},
+	"textdomain": "&&&plugin_file_name&&&",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

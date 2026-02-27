@@ -1,0 +1,41 @@
+{
+	"name": "wr-boilerplate",
+	"version": "1.0.0",
+	"description": "A plugin to create wordpress plugin boilerplate.",
+	"license": "GPL-2.0-or-later",
+	"author": "Leonardo José Nunes",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json",
+		"build": "wp-scripts build --experimental-modules",
+		"start": "wp-scripts start --experimental-modules",
+		"start-browser": "/opt/firefox/firefox localhost/desenvolvimento/wp-admin",
+		"start-vscode": "code .",
+		"start-old": "npm-run-all -p start-wp-scripts start-vscode start-browser",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:css--fix": "wp-scripts lint-style --fix",
+		"lint:js": "wp-scripts lint-js",
+		"lint:js--fix": "wp-scripts lint-js --fix",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"test:unit": "wp-scripts test-unit-js"
+	},
+	"devDependencies": {
+		"@types/jest": "latest",
+		"@wordpress/block-editor": "latest",
+		"@wordpress/blocks": "latest",
+		"@wordpress/eslint-plugin": "latest",
+		"@wordpress/scripts": "latest",
+		"jsdoc": "latest",
+		"npm-run-all": "latest"
+	},
+	"files": [
+		"[^.]*"
+	],
+	"dependencies": {
+		"@wordpress/components": "^32.0.0",
+		"@wordpress/i18n": "^6.11.0",
+		"@wordpress/interactivity": "latest"
+	}
+}

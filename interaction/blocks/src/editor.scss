@@ -1,0 +1,19 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-interaction-boilerplate-creator-form {
+
+	.placeholder {
+		margin: 1em 0;
+		background-color: #ccc;
+		color: #999;
+		text-align: center;
+		font-size: 2em;
+		font-weight: 700;
+		padding: 1em;
+		border-radius: 30px;
+	}
+}

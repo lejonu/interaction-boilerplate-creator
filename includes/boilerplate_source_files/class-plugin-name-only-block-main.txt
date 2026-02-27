@@ -1,0 +1,47 @@
+<?php
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( '&&&plugin_class_name&&&_Main' ) ) {
+
+	/**
+		* This is the plugin's main class that will load all other classes.
+		*
+		* @since   1.0.0
+		* @author  &&&plugin_author_name&&& <&&&plugin_author_email&&&>
+		* @package &&&plugin_package_name&&&
+		*/
+	class &&&plugin_class_name&&&_Main {
+
+		/**
+			* Loads dependencies and runs the plugin.
+			*
+			* @since   1.0.0
+			* @package &&&plugin_package_name&&&
+			*/
+		public function __construct() {
+			$this->load_dependencies();
+			$this->run();
+		}
+
+		/**
+		 * Loads block interaction dependency.
+		 *
+		 * @since  1.0.0
+		 */
+		private function load_dependencies(): void {
+			require &&&plugin_constant_name&&&_DIR . 'interaction/blocks/class-&&&plugin_file_name&&&-blocks.php';
+		}
+ 
+		/**
+		 * Runs the plugin.
+		 *
+		 * @since  1.0.0
+		 */
+		private function run(): void {
+			new &&&plugin_class_name&&&_Blocks();
+		}
+	}
+}

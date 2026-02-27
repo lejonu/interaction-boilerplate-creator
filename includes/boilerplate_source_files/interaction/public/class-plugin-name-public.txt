@@ -1,0 +1,63 @@
+<?php
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( '&&&plugin_class_name&&&_Public' ) ) {
+	
+	/**
+	 * This class manages user interactions in the public area.
+	 *
+		* @since   1.0.0
+		* @author  &&&plugin_author_name&&& <&&&plugin_author_email&&&>
+	 * @package &&&plugin_package_name&&&\interaction\public
+	 */
+	class &&&plugin_class_name&&&_Public {
+		
+		/**
+		 * Current plugin version.
+		 *
+		 * @since  1.0.0
+		 * @access private
+		 * @var    string $version 
+		 */
+		private $version;
+
+		/**
+			* Sets the plugin version and adds actions for public area.
+			*
+			* @since   1.0.0
+			* @access  public
+			* @param   string $version - Current plugin version
+			*/
+		public function __construct( $version ) {
+			$this->version = $version;
+			$this->actions();
+		}
+
+		/**
+		 * Adds action on wp_enqueue_scripts for public area.
+		 *
+			* @since 	1.0.0
+		 * @access public
+		 */
+		public function actions(): void {
+			add_action( 'wp_enqueue_scripts', array( $this, '&&&plugin_function_name&&&_public_scripts' ) );
+	 }
+ 
+		/**
+		 * Registers public scripts.
+		 *
+		 * @since  1.0.0
+		 * @access public
+		 */
+		public function &&&plugin_function_name&&&_public_scripts() {
+				// Styles
+				wp_enqueue_style( 'public_&&&plugin_function_name&&&_css',	plugin_dir_url( __FILE__ ) . 'css/index.css', null, $this->version );
+
+				// Scripts
+				wp_enqueue_script( 'public_&&&plugin_function_name&&&_js',	plugin_dir_url( __FILE__ ) . 'js/index.js', null, $this->version, false );
+		}
+	}
+}

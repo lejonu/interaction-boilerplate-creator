@@ -1,0 +1,7 @@
+import { store } from '@wordpress/interactivity';
+
+store( '&&&plugin_file_name&&&', {
+	state: {},
+	actions: {},
+	callbacks: {},
+} );

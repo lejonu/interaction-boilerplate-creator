@@ -1,0 +1,36 @@
+# .github/workflows/deploy.yml
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+      - "*" # Triggers the action when any tag is pushed
+
+jobs:
+  deploy:
+    name: Deploy plugin to WordPress.org SVN
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        id: deploy
+        with:
+          # These values are passed from
+
+          svn-username: ${{ secrets.SVN_USERNAME }}
+          svn-password: ${{ secrets.SVN_PASSWORD }}
+          # The slug is often inferred from the repo name, but can be specified
+          # slug: your-plugin-slug
+          # Assets directory (optional, default is .wordpress-org)
+          # assets-dir: .wordpress-org
+
+      - name: Report success/failure (optional)
+        if: steps.deploy.outputs.status == 'success'
+        run: echo "Deployment was successful!"
+
+      - if: steps.deploy.outputs.status == 'failure'
+        run: echo "Deployment failed!"

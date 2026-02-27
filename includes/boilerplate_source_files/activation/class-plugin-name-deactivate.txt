@@ -1,0 +1,46 @@
+<?php
+// Avoiding Direct File Access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( '&&&plugin_class_name&&&_Deactivate' ) ) {
+
+	/**
+	 * This class manages the functionalities executed during plugin deactivation.
+	 *
+		* @since   1.0.0
+		* @author  &&&plugin_author_name&&& <&&&plugin_author_email&&&>
+	 * @package &&&plugin_package_name&&&\activation
+  */
+	class &&&plugin_class_name&&&_Deactivate {
+
+		/**
+			* Adds actions for plugin deactivation.
+			*
+			* @since  1.0.0
+			*/
+		public function __construct() {
+			$this->actions();
+		}
+
+		/**
+			* Adds action on deactivate_plugin.
+			*
+			* @since  1.0.0
+			* @access public
+			*/
+		public function actions() {
+			add_action( 'deactivate_plugin', array( $this, 'deactivate' ) );
+		}
+
+		/**
+		 * Functionalities on plugin deactivation.
+		 *
+		 * @access public
+		 * @since  1.0.0
+		 */
+		public function deactivate() {
+		}
+	}
+}

@@ -1,0 +1,164 @@
+/**
+* The following styles get applied both on the front of your site
+* and in the editor.
+*/
+.wp-block-interaction-boilerplate-creator-form {
+
+	/* wrcb color palette */
+	--wrcb-color-green: #44af69;
+	--wrcb-color-red: #f8333c;
+	--wrcb-color-orange: #fcab10;
+	--wrcb-color-blue: #2b9eb3;
+	--wrcb-color-gray: #dbd5b5;
+
+	.creator-message {
+		font-size: 1.4rem;
+		border: 1px solid var(--wrcb-color-gray);
+		padding: 0.2rem;
+
+		&::before {
+			content: "..";
+			background-color: var(--wrcb-color-orange);
+			color: var(--wrcb-color-orange);
+			margin-right: 0.4rem;
+		}
+	}
+
+	.creator-form {
+
+		&__field {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1.4rem;
+
+			&--selection {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 1rem;
+
+				select {
+					font-size: 1.2rem;
+					padding: 0.6rem 1rem;
+				}
+			}
+		}
+
+		&__label {
+			font-size: 1.2rem;
+			font-weight: 500;
+			margin: 0.4rem 0;
+			display: block;
+			transition: all 0.3s;
+		}
+
+		&__input {
+			font-size: 1.4rem;
+			padding: 0.8rem;
+			border-radius: 2px;
+			background-color: rgba(82, 88, 90, 0.15);
+			border: none;
+			border-bottom: 3px solid var(--wrcb-color-gray);
+			width: 90%;
+			display: block;
+			transition: all 0.3s;
+
+			&:focus {
+				outline: none;
+				box-shadow: 0 1rem 2rem var(--wp--preset--shadow--natural);
+				border-bottom: 3px solid var(--wrcb-color-gray);
+			}
+
+			&:invalid {
+				border-bottom: 3px solid var(--wrcb-color-red);
+			}
+
+			&:focus:invalid {
+				border-bottom: 3px solid var(--wrcb-color-orange);
+			}
+
+			&:focus:valid {
+				border-bottom: 3px solid var(--wrcb-color-green);
+			}
+		}
+
+		&__selection {
+			display: flex;
+			gap: 1rem;
+
+			&--type {
+				padding: 0.6rem;
+				font-size: 1.2rem;
+			}
+
+			&--link {
+				display: block;
+				text-align: center;
+
+				/* color: #ffffff; */
+				text-decoration: none;
+			}
+		}
+	}
+
+	.form-submitted {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&__text {
+			text-align: center;
+		}
+
+		&__spinner {
+			height: 5rem;
+			width: 5rem;
+			border: 6px solid var(--wrcb-color-blue);
+			border-color: var(--wrcb-color-blue) transparent var(--wrcb-color-blue) transparent;
+			border-radius: 50%;
+			-webkit-animation: spin 1.3s ease infinite;
+			animation: spin 1.3s ease infinite;
+		}
+
+		@keyframes spin {
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+	}
+
+	.button__field {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&--button {
+
+			/* width: 15rem;  */
+			padding: 1rem 1.6rem;
+			background-color: var(--wrcb-color-green);
+			border-radius: 1rem;
+			cursor: pointer;
+			color: #fff;
+			font-weight: 700;
+			font-size: 1.4rem;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+			text-decoration: none;
+
+			&:hover {
+				transform: scale(1.1);
+				box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			}
+
+			&:active {
+				transform: scale(0.9);
+				border: none;
+				box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+}
