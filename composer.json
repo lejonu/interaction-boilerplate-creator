@@ -1,0 +1,16 @@
+{
+	"name": "lejonu/my-boilerplace-creator",
+	"description": "Boilerplate Creator for Wordpress plugins.",
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*",
+		"wp-coding-standards/wpcs": "*",
+		"phpunit/phpunit": "^9.6",
+		"yoast/phpunit-polyfills": "^4.0",
+		"phpdocumentor/phpdocumentor": "^3.9"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
